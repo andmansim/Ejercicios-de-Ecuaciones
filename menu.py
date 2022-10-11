@@ -1,4 +1,6 @@
 import helpers
+import datos
+import sympy
 def iniciar():
      while True:
         helpers.limpiar_pantalla()
@@ -19,6 +21,12 @@ def iniciar():
         if opcion == '1':
             print("Resuelve la siguiente ecuación diferencial y obtén la constante usando la condición inicial \n")
             print("y' = (x^2 y - y)/(y + 1)  , y(3) = -1")
+            # Defino incognitas
+            x = sympy.symbols('x')
+            y = sympy.Function('y')
+
+            # Defino la función
+            f = 6*x**2 - 3*x**2*(y(x))
             
                 
         if opcion == '2':
