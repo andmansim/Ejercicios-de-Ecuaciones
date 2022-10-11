@@ -72,7 +72,16 @@ def iniciar():
         if opcion == '4':
             print("Resuelve la siguiente ecuación diferencial y representa la familia de soluciones\n")
             print("2ty' - y = 3t^2 ")
-            
+            # Defino incognitas
+            t = sympy.symbols('t')
+            y = sympy.Function('y')
+
+            # Defino la función
+            f = (y(t).diff(t)*2*t - y(t) -3*t**2)
+            calcular = d.Calcular()
+            solucion = calcular.getter(t,  y, f)
+            print('La solución es:')
+            print(solucion)
                 
         
         if opcion == '5':
