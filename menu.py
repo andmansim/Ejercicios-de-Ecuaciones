@@ -31,13 +31,14 @@ def iniciar():
             calcular = d.Calcular()
             solucion = calcular.getter(x, y, f)
             print('La solución es:')
-            print(solucion)
+            print(solucion[1])
             ics = {y(0): 2}
             c = calcular.condicion_inicial(ics)
             print('La C es: ' + str(c))
             
                 
         if opcion == '2':
+            '''Revisarrrrrrrrrrrrrrrrrrr'''
             print("Halla la solución particular de la ecuación y' senx= y Ln y que satisfaga la condición inicial\n")
             print(" y(pi/2) = e")
             # Defino incognitas
@@ -51,12 +52,22 @@ def iniciar():
             print('La solución es:')
             print(solucion)
             ics = {y(sympy.pi/2): sympy.exp}
-            #c = calcular.condicion_inicial(ics)
-            #print('La C es: ' + str(c))
+            c = calcular.condicion_inicial(ics)
+            print('La C es: ' + str(c))
         
         if opcion == '3':
             print("Resuelve  la siguiente ecuación diferencial\n")
             print("y' - y / (t-2)  = 2(t-2)^2")
+            # Defino incognitas
+            t = sympy.symbols('t')
+            y = sympy.Function('y')
+
+            # Defino la función
+            f = (y(x).diff(x) - y)/ (t - 2) -2(t-2)**2
+            calcular = d.Calcular()
+            solucion = calcular.getter(t,  y, f)
+            print('La solución es:')
+            print(solucion)
         
         if opcion == '4':
             print("Resuelve la siguiente ecuación diferencial y representa la familia de soluciones\n")

@@ -11,7 +11,7 @@ class Calcular:
         sympy.Eq(y(x).diff(x), f)
         # Resolviendo la ecuación
         solucion = sympy.dsolve(f)
-        return solucion[1]
+        return solucion
 
 
     '''def condicion_inicial(self, c):
