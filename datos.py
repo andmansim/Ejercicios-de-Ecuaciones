@@ -1,18 +1,17 @@
 import matplotlib as plt
 import sympy
 class Calcular:
+       
     def __init__(self, x, y, f):
-        self.y = y
-        self.x = x
-        self.f = f 
-        #diff para el diferencial
-   
-    def getter(self):
-        sympy.Eq(self.y(self.x).diff(self.x), self.f)
+        
+        sympy.Eq(y(x).diff(x), f)
 
+    
+    def getter(self):
         # Resolviendo la ecuación
-        solucion = sympy.dsolve(self.y(self.x).diff(self.x) - self.f)
-        return solucion
+        solucion = sympy.dsolve(f)
+        return solucion[1]
+
 
     def condicion_inicial(self):
     

@@ -9,7 +9,7 @@ class Calcular:
     def getter(self):
         # Resolviendo la ecuación
         solucion = sympy.dsolve(f)
-        return solucion
+        return solucion[1]
 
 x = sympy.symbols('x')
 y = sympy.Function('y')
