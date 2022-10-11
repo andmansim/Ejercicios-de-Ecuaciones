@@ -6,7 +6,7 @@ class Calcular:
         self.x = x
         self.f = f 
         #diff para el diferencial
-    @property
+   
     def getter(self):
         sympy.Eq(self.y(self.x).diff(self.x), self.f)
 
@@ -20,9 +20,9 @@ class Calcular:
         ics = {self.y(0): 2}
 
         #sustituimos la condición inicial
-        C_eq = sympy.Eq(solucion.lhs.subs(self.x, 0).subs(ics), solucion.rhs.subs(self.x, 0))
+       # C_eq = sympy.Eq(solucion.lhs.subs(self.x, 0).subs(ics), solucion.rhs.subs(self.x, 0))
 
         #Nos saca la C
-        c = sympy.solve(C_eq)[0] #Con [0] pq nos lo da en una lista
+        #c = sympy.solve(C_eq)[0] #Con [0] pq nos lo da en una lista
 
 

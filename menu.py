@@ -26,7 +26,7 @@ def iniciar():
             y = sympy.Function('y')
 
             # Defino la función
-            f = (y(x))*x**2 - (y(x))/((y(x)) + 1)
+            f = ((y(x))*x**2 - (y(x))/((y(x)) + 1))
             calcular = d.Calcular(x, y, f)
             solucion = calcular.getter()
             print(solucion)
