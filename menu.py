@@ -63,7 +63,7 @@ def iniciar():
             y = sympy.Function('y')
 
             # Defino la función
-            f = (y(x).diff(x) - y)/ (t - 2) -2(t-2)**2
+            f = (y(t).diff(t) - y(t))/ (t - 2) -2*(t-2)**2
             calcular = d.Calcular()
             solucion = calcular.getter(t,  y, f)
             print('La solución es:')
