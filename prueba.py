@@ -1,5 +1,6 @@
 import matplotlib as plt
 import sympy
+
 class Calcular:
     def __init__(self, x, y, f):
         
@@ -15,7 +16,7 @@ x = sympy.symbols('x')
 y = sympy.Function('y')
 
 # Defino la función
-f = y(x).diff(x) - (y(x)*x**2 - y(x))/(y(x) + 1)
+f = y(x).diff(x)  - (y(x) *sympy.log(y(x)))/sympy.sin(x)
 calcular = Calcular(x, y, f)
 solucion = calcular.getter()
 print(solucion)
