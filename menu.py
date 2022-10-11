@@ -1,5 +1,5 @@
 import helpers
-import datos
+import datos as d
 import sympy
 def iniciar():
      while True:
@@ -26,7 +26,10 @@ def iniciar():
             y = sympy.Function('y')
 
             # Defino la función
-            f = 6*x**2 - 3*x**2*(y(x))
+            f = (y(x))*x**2 - (y(x))/((y(x)) + 1)
+            calcular = d.Calcular(x, y, f)
+            solucion = calcular.getter()
+            print(solucion)
             
                 
         if opcion == '2':

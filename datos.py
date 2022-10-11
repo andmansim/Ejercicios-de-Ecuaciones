@@ -6,10 +6,13 @@ class Calcular:
         self.x = x
         self.f = f 
         #diff para el diferencial
-        ec = sympy.Eq(self.y(self.x).diff(self.x), self.f)
+    @property
+    def getter(self):
+        sympy.Eq(self.y(self.x).diff(self.x), self.f)
 
         # Resolviendo la ecuación
         solucion = sympy.dsolve(self.y(self.x).diff(self.x) - self.f)
+        return solucion
 
     def condicion_inicial(self):
     
