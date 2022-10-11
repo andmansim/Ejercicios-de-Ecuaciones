@@ -1,27 +1,26 @@
 import matplotlib as plt
 import sympy
 class Calcular:
-       
-    def __init__(self, x, y, f):
+    
+    '''   def __init__(self, x, y, f):
         
         sympy.Eq(y(x).diff(x), f)
-
+'''
     
-    def getter(self):
+    def getter(self, x, y, f):
+        sympy.Eq(y(x).diff(x), f)
         # Resolviendo la ecuación
         solucion = sympy.dsolve(f)
         return solucion[1]
 
 
-    def condicion_inicial(self):
-    
-        # Condición inicial
-        ics = {self.y(0): 2}
-
+    def condicion_inicial(self, c):
+ 
         #sustituimos la condición inicial
-       # C_eq = sympy.Eq(solucion.lhs.subs(self.x, 0).subs(ics), solucion.rhs.subs(self.x, 0))
+        C_eq = sympy.Eq(solucion.lhs.subs(self.x, 0).subs(c), solucion.rhs.subs(self.x, 0))
 
         #Nos saca la C
-        #c = sympy.solve(C_eq)[0] #Con [0] pq nos lo da en una lista
+        c1 = sympy.solve(C_eq)[0] #Con [0] pq nos lo da en una lista
+        return c1
 
 

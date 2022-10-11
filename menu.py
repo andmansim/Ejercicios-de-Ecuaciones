@@ -27,10 +27,17 @@ def iniciar():
 
             # Defino la función
             f = y(x).diff(x) - (y(x)*x**2 - y(x))/(y(x) + 1)
-            calcular = d.Calcular(x, y, f)
-            solucion = calcular.getter()
+            calcular = d.Calcular()
+            solucion = calcular.getter(x, y, f)
             print('La solución es:')
             print(solucion)
+            ics = {y(0): 2}
+            c = calcular.condicion_inicial(ics)
+            print('La C es: ' + str(c))
+
+
+
+
             
                 
         if opcion == '2':
