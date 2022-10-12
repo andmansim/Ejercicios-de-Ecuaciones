@@ -27,21 +27,19 @@ def iniciar():
             y = sympy.Function('y')
 
             # Defino la función
-            f = y(x).diff(x) - (y(x)*x**2 - y(x))/(y(x) + 1)
-            calcular = d.Calcular()
-            solucion = calcular.getter(x, y, f)
+            f = y(x).diff(x) - (y(x)*x**2 - y(x))/(y(x) + 1)            
+            
+            ics = {y(0): 2}
+            ca = d.Calcular()
+            c = ca.inicio(x, y, f, True, 1, ics)
             print('La solución es:')
             print(solucion[1])
-            ics = {y(0): 2}
-            c = calcular.condicion_inicial(ics)
-            print('La C es: ' + str(c))
-            
+            print('La solucion particular es: ' + str(c))
                 
         if opcion == '2':
-            '''Revisarrrrrrrrrrrrrrrrrrr'''
             print("Halla la solución particular de la ecuación y' senx= y Ln y que satisfaga la condición inicial\n")
             print(" y(pi/2) = e")
-            # Defino incognitas
+
             # Defino incognitas
             x = sympy.symbols('x')
             y = sympy.Function('y')
@@ -50,8 +48,9 @@ def iniciar():
             f = y(x).diff(x) * sympy.sin(x) - (y(x) *sympy.log(y(x)))
 
             ca = d.Calcular()
-            ca.inicio(x, y, f, True)
-            print('La C es: ' + str(c))
+            ics = {y(sympy.pi/2): sympy.exp}
+            c = ca.inicio(x, y, f, True, 2, ics)
+            print('La solucion particular es: ' + str(c))
         
         if opcion == '3':
             print("Resuelve  la siguiente ecuación diferencial\n")
