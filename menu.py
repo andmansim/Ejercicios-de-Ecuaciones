@@ -61,11 +61,10 @@ def iniciar():
 
             # Defino la función
             f = (y(t).diff(t) - y(t))/ (t - 2) -2*(t-2)**2
-            calcular = d.Calcular()
-            solucion = calcular.getter(t,  y, f)
-            print('La solución es:')
-            print(solucion)
-        
+            ca = d.Calcular()
+            solucion = ca.inicio(t, y, f, False, 0, 0)
+            print('La solucion es: ' + str(solucion))
+            
         if opcion == '4':
             print("Resuelve la siguiente ecuación diferencial y representa la familia de soluciones\n")
             print("2ty' - y = 3t^2 ")
@@ -75,11 +74,11 @@ def iniciar():
 
             # Defino la función
             f = (y(t).diff(t)*2*t - y(t) -3*t**2)
-            calcular = d.Calcular()
-            solucion = calcular.getter(t,  y, f)
-            print('La solución es:')
-            print(solucion)
-                
+            ca = d.Calcular()
+            ics = {y(sympy.pi/2): sympy.exp}
+            solucion = ca.inicio(t, y, f, False, 0, 0)
+            print('La solucion particular es: ' + str(solucion))
+
         
         if opcion == '5':
             print("Saliendo...\n")

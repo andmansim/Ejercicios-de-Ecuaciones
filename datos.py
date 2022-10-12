@@ -6,7 +6,7 @@ class Calcular:
         #diff para el diferencial
         ec = sympy.Eq(y(x).diff(x), f)
         # Resolviendo la ecuación
-        solucion = sympy.dsolve(y(x).diff(x) - f)
+        solucion = sympy.dsolve(y(x).diff(x) - f)[0]
 
         print(solucion)
         if cond_inicial == True:
