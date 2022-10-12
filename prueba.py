@@ -15,7 +15,7 @@ class Calcular:
     def condicion_inicial(self, c):
      
         
-        C_eq = sympy.Eq(solucion.lhs.subs(x, 0).subs(ics), solucion.rhs.subs(x, 0))
+        C_eq = sympy.Eq(solucion.lhs.subs(x, 0).subs(c), solucion.rhs.subs(x, 0))
 
 
         print(C_eq)
@@ -26,7 +26,7 @@ class Calcular:
 
         #Solución particular
 
-        solucion_p = sympy.Eq(y(x), c* sympy.exp(-x**3) + 2)
+        solucion_p = sympy.Eq(y(x), sympy.exp(ci*sympy.sqrt(sympy.cos(x) - 1)/sympy.sqrt(sympy.cos(x) + 1)))
         return solucion_p
 
 x = sympy.symbols('x')
@@ -36,7 +36,9 @@ y = sympy.Function('y')
 f = y(x).diff(x)  - (y(x) *sympy.log(y(x)))/sympy.sin(x)
 calcular = Calcular(x, y, f)
 solucion = calcular.getter()
+print(solucion)
 ics = {y(sympy.pi/2): sympy.exp}
+print(ics)
 c = calcular.condicion_inicial(ics)
 print(c)
-print(solucion)
+
