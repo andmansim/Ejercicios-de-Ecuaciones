@@ -1,7 +1,6 @@
 import helpers
 import datos as d
 import sympy
-import numpy as np
 def iniciar():
      while True:
         helpers.limpiar_pantalla()
@@ -33,7 +32,7 @@ def iniciar():
             ca = d.Calcular()
             c, solucion = ca.inicio(x, y, f, True, 1, ics)
             print('La solución es:')
-            print(solucion[1])
+            print(solucion)
             print('La solucion particular es: ' + str(c))
                 
         if opcion == '2':
