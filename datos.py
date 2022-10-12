@@ -18,7 +18,10 @@ class Calcular:
             c = sympy.solve(C_eq)[0] #Con [0] pq nos lo da en una lista
             if n == 2:
                 solucion_p = sympy.Eq(y(x), sympy.exp(sympy.exp((c*sympy.tan(x/2) - c + 2)/(sympy.tan(x/2) - 1))))
-            return solucion_p
+            
+            elif n == 1:
+                solucion_p = sympy.Eq(y(x), sympy.LambertW((c*sympy.exp(x*(x**2 - 3)))**(1/3)*(-1 - sympy.sqrt(3)*I)/2))
+            return solucion_p, solucion   
         else: 
             return solucion
     

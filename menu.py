@@ -27,11 +27,11 @@ def iniciar():
             y = sympy.Function('y')
 
             # Defino la función
-            f = y(x).diff(x) - (y(x)*x**2 - y(x))/(y(x) + 1)            
+            f = (y(x)*x**2 - y(x))/(y(x) + 1)            
             
             ics = {y(0): 2}
             ca = d.Calcular()
-            c = ca.inicio(x, y, f, True, 1, ics)
+            c, solucion = ca.inicio(x, y, f, True, 1, ics)
             print('La solución es:')
             print(solucion[1])
             print('La solucion particular es: ' + str(c))
@@ -49,7 +49,7 @@ def iniciar():
 
             ca = d.Calcular()
             ics = {y(sympy.pi/2): sympy.exp}
-            c = ca.inicio(x, y, f, True, 2, ics)
+            c, solucion = ca.inicio(x, y, f, True, 2, ics)
             print('La solucion particular es: ' + str(c))
         
         if opcion == '3':
