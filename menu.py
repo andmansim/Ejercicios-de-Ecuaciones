@@ -42,17 +42,15 @@ def iniciar():
             print("Halla la solución particular de la ecuación y' senx= y Ln y que satisfaga la condición inicial\n")
             print(" y(pi/2) = e")
             # Defino incognitas
+            # Defino incognitas
             x = sympy.symbols('x')
             y = sympy.Function('y')
 
             # Defino la función
             f = y(x).diff(x) * sympy.sin(x) - (y(x) *sympy.log(y(x)))
-            calcular = d.Calcular()
-            solucion = calcular.getter(x, y, f)
-            print('La solución es:')
-            print(solucion)
-            ics = {y(sympy.pi/2): sympy.exp}
-            c = calcular.condicion_inicial(ics)
+
+            ca = d.Calcular()
+            ca.inicio(x, y, f, True)
             print('La C es: ' + str(c))
         
         if opcion == '3':
